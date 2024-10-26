@@ -1,16 +1,23 @@
 from django.shortcuts import HttpResponse, render
 
+from .models import Users
+
 # Create your views here.
 
 
 def home(request):
     print('test home')
-    name= "ahmad"
-    context={
+    name = "ahmad"
+    # get all the data in this modale
+    users = Users.objects.all()
+    print(users)
+
+    context = {
         'name':name,
-        "worked":True
+        "worked":True,
+        "users":users
 
     }
 
-    return  render(request, 'home.html',context=context)
+    return  render(request, 'home.html', context=context)
 
