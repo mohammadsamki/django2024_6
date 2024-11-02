@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-html
-<html>
-    {% load static %}
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    </head>
-    <body>
-        <h1>welcome from home file<h1>
+{% extends "base.html" %}
+{%block title%}
+<title>home</title>
+{% endblock %}
 
-{% comment %} {% logic %}
-{% endLogic %}
-{% if true %}
-{% endif %}
-{{ var }}
-{% endcomment %}
+{%block contant%}
 {% if worked %}
     <p>You have worked!</p>
     {% else %}
@@ -31,7 +16,4 @@ html
     <p>---------------------------------</p>
 
     {% endfor %}
-
-        <script src="" async defer></script>
-    </body>
-</html>
+{%endblock%}
