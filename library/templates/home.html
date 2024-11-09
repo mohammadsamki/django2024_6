@@ -4,6 +4,13 @@
 {% endblock %}
 
 {%block contant%}
+<h1>Welcome to Home Page you visit the page {{ number_of_views }} time</h1>
+<form method="post">
+    {% csrf_token %}
+<button type="submit" >change logo</button>
+
+</form>
+<h2>you changed the logo {{ change_logo }} time</h2>
 {% if worked %}
     <p>You have worked!</p>
     {% else %}
