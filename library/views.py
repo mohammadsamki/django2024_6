@@ -1,10 +1,13 @@
 from django.shortcuts import HttpResponse, render
 
 from .models import Users
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+#  add login required lo this view
 
+@login_required(login_url='login')
 def home(request):
     print('test home')
     name = "ahmad"
